@@ -7,10 +7,8 @@
     cache_valid_time: 3600
   notify:
     - restart nscd service
-    - update pam auth
 
 - name: activate libnss-lab module
   shell: sysv-rc-conf libnss-ldap on
   notify:
     - restart nscd service
-    - update pam auth

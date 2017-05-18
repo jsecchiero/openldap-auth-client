@@ -33,3 +33,4 @@
   template:
     src: ldap.secret.j2
     dest: /etc/ldap.secret
+  when: openldap['config']['secret'] is defined

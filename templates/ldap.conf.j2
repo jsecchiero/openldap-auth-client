@@ -9,4 +9,16 @@ rootbinddn {{ openldap['config']['rootbinddn'] }}
 port {{ openldap['config']['port'] }}
 pam_password md5
 nss_base_group		{{ openldap['config']['nss_base_group'] }}
+{% if ssl is defined %}
+ssl		{{ openldap['config']['ssl'] }}
+{% endif %}
+{% if tls_checkpeer is defined %}
+tls_checkpeer		{{ openldap['config']['tls_checkpeer'] }}
+{% endif %}
+{% if TLS_REQCERT is defined %}
+TLS_REQCERT		{{ openldap['config']['TLS_REQCERT'] }}
+{% endif %}
+{% if bind_policy is defined %}
+bind_policy		{{ openldap['config']['bind_policy'] }}
+{% endif %}
 nss_initgroups_ignoreusers backup,bin,colord,daemon,games,gnats,irc,landscape,libuuid,list,lp,mail,man,messagebus,mongodb,moviesserver,mysql,news,ntp,postgres,proxy,root,sshd,sync,sys,syslog,uucp,www-data
